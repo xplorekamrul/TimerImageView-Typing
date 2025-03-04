@@ -21,10 +21,6 @@ export default function CountdownTimer() {
     return () => clearInterval(interval)
   }, [isRunning, timeLeft])
 
-  const resetTimer = () => {
-    setTimeLeft(60)
-    setIsRunning(false)
-  }
 
   const toggleTimer = () => {
     setIsRunning(!isRunning)

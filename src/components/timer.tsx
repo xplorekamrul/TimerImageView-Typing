@@ -21,11 +21,6 @@ export default function CountdownTimer() {
     return () => clearInterval(interval)
   }, [isRunning, timeLeft])
 
-
-  const toggleTimer = () => {
-    setIsRunning(!isRunning)
-  }
-
   // Calculate the progress for the circle (from 0 to 1)
   const progress = timeLeft / 60
 

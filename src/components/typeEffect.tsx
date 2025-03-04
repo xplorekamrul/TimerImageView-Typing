@@ -64,7 +64,7 @@ const TypeEffect: React.FC<DynamicTypeEffectProps> = ({
   }, [charIndex, phase, currentTextIndex, dynamicText, typingSpeed, deletingSpeed, pauseTime]);
 
   return (
-    <div className={`${className} text-2xl font-mono`}>
+    <div className={`${className} text-2xl font-mono w-fit mx-auto`}>
       {fixedText}{' '}
       <span className="border-r-2 border-black pr-1">
         {displayedDynamic}

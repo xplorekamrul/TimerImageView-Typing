@@ -52,7 +52,7 @@ export const TabsLightboxGallery = () => {
   return (
     <div className="mt-10">
       <Tabs defaultValue="all" onValueChange={(value) => setActiveTab(value as "all" | "ai" | "animal" | "nature")}>
-        <TabsList className="flex gap-x-5 mt-5 w-[90%] mx-auto bg-0">
+        <TabsList className="flex gap-x-5 mt-5 flex-wrap gap-y-5 md:w-[90%] mx-auto bg-0">
           <TabsTrigger value="all" className="px-8 py-2 rounded-lg bg-black text-white">
             All
           </TabsTrigger>
@@ -69,7 +69,7 @@ export const TabsLightboxGallery = () => {
 
         {/* Merged Content: display images based on the active tab */}
         <TabsContent value={activeTab}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 w-[90%] mx-auto mt-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 w-[90%] mx-auto mt-[100px] md:mt-10 justify-center">
             {currentImages.map((img: { src: string; alt: string }, index: number) => (
               <img
                 key={index}

@@ -1,15 +1,29 @@
+import { AutoSlider } from "@/components/autoSlider";
+import BackToTopButton from "@/components/backToTop";
+import StickyHeader from "@/components/stickyHeader";
 import TabsLightboxGallery from "@/components/tabs";
 import CountdownTimer from "@/components/timerOpeningPaage";
 import TypeEffect from "@/components/typeEffect";
 
 export default function Home() {
+  const slides = [
+    { id: "slide1", image:"/ai (1)-min.jpg" }, // Blue
+    { id: "slide2", image:"/ai (3)-min.jpg" }, // Green
+    { id: "slide3", image:"/animal (1)-min.jpg" }, // Red
+    { id: "slide4", image:"/animal (1)-min.jpg" }, // Amber
+    { id: "slide5", image:"/nature (1)-min.jpg" }, // Purple
+  ]
+
+
+  
   return (
     <>
-     <CountdownTimer/>
-
-     <TypeEffect fixedText="Hello, " dynamicText={["welcome to My Blog "]} className="text-center my-10 font-semibold"/>
-     <h1  className="text-center my-10 font-medium ">click any Picture For Better Experience</h1>
+     {/* <CountdownTimer/> */}
+    <StickyHeader/>
+    <AutoSlider slides={slides} interval={5000} />
+   
      <TabsLightboxGallery/>
+     <BackToTopButton/>
     </>
   );
 }

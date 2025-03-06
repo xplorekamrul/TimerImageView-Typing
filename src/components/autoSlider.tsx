@@ -61,44 +61,50 @@ export function AutoSlider({
 
   return (
     <div
-      className={cn("relative w-full overflow-hidden ", className)}
+      className={cn("relative w-full overflow-hidden", className)}
       onMouseEnter={() => setShowControls(true)}
       onMouseLeave={() => setShowControls(false)}
     >
       {/* Slides */}
       <div className="relative h-[300px] md:h-[400px] lg:h-[700px]">
-        {slides.map((slide, index) => (
-          <div
-            key={slide.id}
-            className={cn(
-              "absolute inset-0 w-full h-full transition-opacity duration-500",
-              index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
-            )}
-            style={{
-              backgroundColor: slide.color,
-              backgroundImage: slide.image ? `url(${slide.image})` : undefined,
-              backgroundSize: slide.image ? "cover" : undefined,
-              backgroundPosition: slide.image ? "center" : undefined,
-              backgroundRepeat: slide.image ? "no-repeat" : undefined,
-            }}
-          >
-            {slide.content || (
-              <div className="flex items-center justify-center h-full text-black text-2xl font-bold">
-                slide {index + 1}
-                <div>
-                  <TypeEffect
-                    fixedText="Hello, "
-                    dynamicText={["welcome to My Blog "]}
-                    className="text-center mb-10 font-semibold mt-[100px]"
-                  />
-                  <h1 className="text-center my-10 font-medium ">
-                    click any Picture For Better Experience
-                  </h1>
+        <div className="w-full h-full bg-[rgba(0,0,0,0.4)]">
+          {slides.map((slide, index) => (
+            <div
+              key={slide.id}
+              className={cn(
+                "absolute inset-0 w-full h-full transition-opacity duration-500",
+                index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
+              )}
+              style={{
+                backgroundColor: slide.color,
+              }}
+            >
+              {/* If there's an image, render an <img> tag */}
+              {slide.image && (
+                <img
+                  src={slide.image}
+                  alt={`Slide ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              )}
+              {/* Render provided content or default content */}
+              {slide.content || (
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-black text-2xl font-bold">
+                  <div>
+                    <TypeEffect
+                      fixedText="Hello, "
+                      dynamicText={["welcome to My Blog "]}
+                      className="text-center mb-10 font-semibold mt-[100px] text-white"
+                    />
+                    <h1 className="text-center my-10 font-medium text-white">
+                      click any Picture For Better Experience
+                    </h1>
+                  </div>
                 </div>
-              </div>
-            )}
-          </div>
-        ))}
+              )}
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Navigation Arrows */}

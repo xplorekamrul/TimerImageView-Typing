@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { FC, useState } from "react";
 import Lightbox from "react-image-lightbox";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import "react-image-lightbox/style.css";
@@ -41,7 +41,7 @@ const imagesMap = {
   nature: natureImages,
 };
 
-export const TabsLightboxGallery = () => {
+export const TabsLightboxGallery: FC<{ className?: string; id?: string }> = ({ className, id }) => {
   const [activeTab, setActiveTab] = useState<"all" | "ai" | "animal" | "nature">("all");
   const [photoIndex, setPhotoIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
@@ -50,7 +50,7 @@ export const TabsLightboxGallery = () => {
   const currentImages = imagesMap[activeTab];
 
   return (
-    <div className="mt-10">
+    <div id={id} className={`mt-10 ${className || ''}`}>
       <Tabs defaultValue="all" onValueChange={(value) => setActiveTab(value as "all" | "ai" | "animal" | "nature")}>
         <TabsList className="flex gap-x-5 mt-5 flex-wrap gap-y-5 md:w-[90%] mx-auto bg-0">
           <TabsTrigger value="all" className="px-8 py-2 rounded-lg bg-black text-white">
@@ -104,4 +104,6 @@ export const TabsLightboxGallery = () => {
       )}
     </div>
   );
-};export default TabsLightboxGallery;
+};
+
+export default TabsLightboxGallery;

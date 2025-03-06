@@ -4,26 +4,25 @@ import StickyHeader from "@/components/stickyHeader";
 import TabsLightboxGallery from "@/components/tabs";
 import CountdownTimer from "@/components/timerOpeningPaage";
 import TypeEffect from "@/components/typeEffect";
+import { main } from "framer-motion/m";
 
 export default function Home() {
   const slides = [
-    { id: "slide1", image:"/ai (1)-min.jpg" }, // Blue
-    { id: "slide2", image:"/ai (3)-min.jpg" }, // Green
-    { id: "slide3", image:"/animal (1)-min.jpg" }, // Red
-    { id: "slide4", image:"/animal (1)-min.jpg" }, // Amber
-    { id: "slide5", image:"/nature (1)-min.jpg" }, // Purple
-  ]
+    { id: "slide1", image: "/ai (1)-min.jpg" }, // Blue
+    { id: "slide2", image: "/ai (3)-min.jpg" }, // Green
+    { id: "slide3", image: "/animal (1)-min.jpg" }, // Red
+    { id: "slide4", image: "/animal (1)-min.jpg" }, // Amber
+    { id: "slide5", image: "/nature (1)-min.jpg" }, // Purple
+  ];
 
-
-  
   return (
-    <>
-     {/* <CountdownTimer/> */}
-    <StickyHeader/>
-    <AutoSlider slides={slides} interval={5000} />
-   
-     <TabsLightboxGallery/>
-     <BackToTopButton/>
-    </>
+    < main className="scroll-smooth overflow-auto h-screen"> 
+      {/* <CountdownTimer/> */}
+      <StickyHeader />
+      <AutoSlider slides={slides} interval={5000} />
+
+      <TabsLightboxGallery id="gallary" className="mt-10" />
+      <BackToTopButton />
+    </main>
   );
 }

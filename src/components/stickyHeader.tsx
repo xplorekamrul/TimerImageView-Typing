@@ -54,14 +54,29 @@ const StickyHeader: React.FC = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex">
           <ul className="flex space-x-8">
-            <li className="cursor-pointer text-gray-800 hover:text-gray-500">
-              Home
+            <li>
+              <Link
+                href="/"
+                className="text-lg cursor-pointer text-gray-800 hover:text-gray-500"
+              >
+                Home
+              </Link>
             </li>
-            <li className="cursor-pointer text-gray-800 hover:text-gray-500">
-              About
+            <li>
+              <Link
+                href="/"
+                className="text-lg cursor-pointer text-gray-800 hover:text-gray-500"
+              >
+                About
+              </Link>
             </li>
-            <li className="cursor-pointer text-gray-800 hover:text-gray-500">
-              Services
+            <li>
+              <Link
+                href="#gallary"
+                className="text-lg cursor-pointer text-gray-800 hover:text-gray-500"
+              >
+                Blogs
+              </Link>
             </li>
           </ul>
         </nav>
@@ -106,14 +121,29 @@ const StickyHeader: React.FC = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white shadow-md">
           <ul className="px-4 pt-2 pb-4 space-y-2">
-            <li className="cursor-pointer text-gray-800 hover:text-gray-500">
-              Home
+            <li>
+              <Link
+                href="/"
+                className="text-lg cursor-pointer text-gray-800 hover:text-gray-500"
+              >
+                Home
+              </Link>
             </li>
-            <li className="cursor-pointer text-gray-800 hover:text-gray-500">
-              About
+            <li>
+              <Link
+                href="/"
+                className="text-lg cursor-pointer text-gray-800 hover:text-gray-500"
+              >
+                About
+              </Link>
             </li>
-            <li className="cursor-pointer text-gray-800 hover:text-gray-500">
-              Services
+            <li>
+              <Link
+                href="#gallary"
+                className="text-lg cursor-pointer text-gray-800 hover:text-gray-500"
+              >
+                Blog
+              </Link>
             </li>
             <li>
               <button className="w-full bg-black text-white px-4 py-2 rounded transition-colors duration-200">

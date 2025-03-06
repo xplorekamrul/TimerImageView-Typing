@@ -14,12 +14,12 @@ export default function Home() {
   ];
 
   return (
-    < main className="scroll-smooth overflow-auto h-screen"> 
+    < main className="scroll-smooth "> 
       <CountdownTimer/>
       <StickyHeader />
       <AutoSlider slides={slides} interval={5000} />
       <TabsLightboxGallery id="gallary" className="mt-10" />
-      <BackToTopButton />
+      <BackToTopButton/>
     </main>
   );
 }

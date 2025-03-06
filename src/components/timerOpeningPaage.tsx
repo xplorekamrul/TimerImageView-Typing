@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 
 export default function HomePage() {
   // 9 seconds countdown
-  const [timeLeft, setTimeLeft] = useState(9)
+  const [timeLeft, setTimeLeft] = useState(5)
   // controls whether the timer overlay is shown
   const [showTimer, setShowTimer] = useState(true)
 
@@ -31,7 +31,7 @@ export default function HomePage() {
 
   // Timer overlay component
   const timerOverlay = (
-    <div className="fixed inset-0 flex flex-col items-center justify-center bg-black z-50">
+    <div className="fixed inset-0 flex flex-col items-center justify-center bg-black z-[9999]">
       <div className="relative w-64 h-64 flex items-center justify-center">
         {/* SVG for the circular progress indicator */}
         <svg className="absolute w-full h-full" viewBox="0 0 256 256">

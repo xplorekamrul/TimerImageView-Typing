@@ -3,8 +3,6 @@ import BackToTopButton from "@/components/backToTop";
 import StickyHeader from "@/components/stickyHeader";
 import TabsLightboxGallery from "@/components/tabs";
 import CountdownTimer from "@/components/timerOpeningPaage";
-import TypeEffect from "@/components/typeEffect";
-import { main } from "framer-motion/m";
 
 export default function Home() {
   const slides = [
@@ -17,10 +15,9 @@ export default function Home() {
 
   return (
     < main className="scroll-smooth overflow-auto h-screen"> 
-      {/* <CountdownTimer/> */}
+      <CountdownTimer/>
       <StickyHeader />
       <AutoSlider slides={slides} interval={5000} />
-
       <TabsLightboxGallery id="gallary" className="mt-10" />
       <BackToTopButton />
     </main>

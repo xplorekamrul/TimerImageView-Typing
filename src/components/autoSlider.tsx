@@ -68,6 +68,7 @@ export function AutoSlider({
       {/* Slides */}
       <div className="relative h-[300px] md:h-[400px] lg:h-[700px]">
         <div className="w-full h-full bg-[rgba(0,0,0,0.4)]">
+          {/*//overly */}
           {slides.map((slide, index) => (
             <div
               key={slide.id}
